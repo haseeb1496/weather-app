@@ -16,7 +16,10 @@ class TodaysForecastCard extends Component<TodaysForecastCardProps> {
     showMore: false
   };
 
-  showMoreHandler = (evt: any) => {
+  /**
+   * Function to toggle show more state variable
+   */
+  showMoreHandler = () => {
     this.setState({ showMore: !this.state.showMore });
   };
 
@@ -48,7 +51,9 @@ class TodaysForecastCard extends Component<TodaysForecastCardProps> {
         weatherIcon = clearWeather;
         break;
     }
-    if (this.props.forecastCard.locationName) {
+    if (this.props.loadingData) {
+      weatherData = <span data-testid="todays-forecast-loading-text" className="no-data-text">Loading...</span>;
+    } else if (this.props.forecastCard.locationName) {
       weatherData =
         <div className="outer-card-container">
           <span data-testid="todays-forecast-location-name" className="card-title">Today's Forecast for {this.props.forecastCard.locationName}</span>
@@ -63,8 +68,6 @@ class TodaysForecastCard extends Component<TodaysForecastCardProps> {
             <img className="weather-image" src={weatherIcon}/>
           </div>
         </div>
-    } else if (this.props.loadingData) {
-      weatherData = <span data-testid="todays-forecast-loading-text" className="no-data-text">Loading...</span>;
     } else {
       weatherData = <span data-testid="todays-forecast-no-data-text" className="no-data-text">No data found!</span>;
     }

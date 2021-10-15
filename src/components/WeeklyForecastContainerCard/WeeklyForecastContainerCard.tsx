@@ -13,7 +13,9 @@ const WeeklyForecastContainerCard = (props: weeklyForecastCardProps) => {
   let weatherCards = props.weeklyForecastCards.map((cardData: WeeklyForecast, ind) => {
     return(<WeatherCard key={ind} cardData={cardData}></WeatherCard>)
   });
-  if (props.weeklyForecastCards.length && props.weeklyForecastCards[0].locationName) {
+  if (props.loadingData) {
+    weatherData = <span data-testid="weekly-forecast-loading-text" className="no-data-text">Loading...</span>;
+  } else if (props.weeklyForecastCards.length && props.weeklyForecastCards[0].locationName) {
     weatherData =
       <div className="outer-card-container">
         <span data-testid="weekly-forecast-location-name" className="card-title">Weekly Forecast for {props.weeklyForecastCards[0].locationName}</span>
@@ -21,8 +23,6 @@ const WeeklyForecastContainerCard = (props: weeklyForecastCardProps) => {
           <div className="weather-cards-container">{weatherCards}</div>
         </div>
       </div>
-  } else if (props.loadingData) {
-    weatherData = <span data-testid="weekly-forecast-loading-text" className="no-data-text">Loading...</span>;
   } else {
     weatherData = <span data-testid="weekly-forecast-no-data-text" className="no-data-text">No data found!</span>;
   }
