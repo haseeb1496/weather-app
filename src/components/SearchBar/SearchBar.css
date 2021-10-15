@@ -1,0 +1,9 @@
+.search-bard-container {
+    display: flex;
+}
+
+.search-bard-container .search-input {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+}

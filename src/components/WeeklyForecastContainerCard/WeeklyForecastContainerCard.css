@@ -1,0 +1,28 @@
+.card-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.outer-card-container {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 100%;
+}
+
+.outer-card-container .outer-weather-cards-container {
+    margin-top: 1rem;
+    overflow-x: auto;
+    justify-content: flex-start;
+}
+
+.no-data-text {
+    font-size: 2rem;
+}
+
+.outer-card-container .outer-weather-cards-container .weather-cards-container {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+}

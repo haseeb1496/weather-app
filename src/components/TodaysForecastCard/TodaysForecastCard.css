@@ -1,0 +1,45 @@
+.weather-image {
+    height: 7.5rem;
+    margin: auto 0;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.info-container span:last-of-type {
+    margin-bottom: 0;
+}
+
+.card-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.info-container .card-info {
+    margin-bottom: .5rem;
+    font-size: 1.2rem;
+}
+
+.outer-card-container {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.inner-card-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.inner-card-container .show-more-text {
+    cursor: pointer;
+}
+
+.no-data-text {
+    font-size: 2rem;
+}

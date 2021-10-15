@@ -1,38 +1,64 @@
 .App {
+  height: 100%;
+  padding: 0 4rem;
+}
+
+.title {
+  padding: 2rem;
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+
+.todays-forecast-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 2rem;
+}
+
+.todays-forecast-container .todays-forecast-card-container {
+  height: 12rem;
+  min-height: 12rem;
+  padding: 2rem;
+  box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  background-color: gainsboro;
+  max-width: 42%;
+  width: 42%;
+  min-width: 32rem;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 5%;
+}
+
+.todays-forecast-container .todays-forecast-card-container > div,
+.weekly-forecast-container .todays-forecast-card-container > div
+{
+  width: 100%;
+  margin: auto;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.weekly-forecast-container .todays-forecast-card-container {
+  height: 20rem;
+  min-height: 20rem;
+  padding: 2rem;
+  box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  background-color: gainsboro;
+  min-width: 32rem;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: row;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media screen and (max-width: 1280px) {
+  .todays-forecast-container .todays-forecast-card-container {
+    max-width: 100%;
+    width: 100%;
   }
 }
